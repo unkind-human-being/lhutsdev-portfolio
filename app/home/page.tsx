@@ -6,6 +6,7 @@ import { useState } from "react";
 
 export default function Home() {
   const [showTeam, setShowTeam] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false); // 🍔 New menu toggle state
 
   // 👥 Team Data
   const teamMembers = [
@@ -19,36 +20,73 @@ export default function Home() {
 
   return (
     <main className="relative min-h-screen flex flex-col items-center text-gray-900 overflow-hidden bg-gradient-to-b from-[#FF8FB7] to-[#FFC1D4] scroll-smooth">
-      {/* 🌈 Floating animated shapes (visible on all sections) */}
+      {/* 🌈 Floating animated shapes */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <FloatingShapes />
       </div>
 
       {/* 🌐 Navigation Bar */}
       <nav className="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md shadow-md z-50">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-3">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+          {/* Logo / Brand */}
           <span className="text-xl font-bold bg-gradient-to-r from-purple-700 via-pink-600 to-rose-400 text-transparent bg-clip-text tracking-tight">
             CODECRAFTERS
           </span>
 
-          <div className="flex space-x-6 text-sm font-semibold text-gray-700">
+          {/* Desktop Links */}
+          <div className="hidden md:flex space-x-8 text-sm font-semibold text-gray-700">
             <a href="#home" className="hover:text-purple-700 transition-colors duration-200">
               HOME
             </a>
             <a href="#about" className="hover:text-purple-700 transition-colors duration-200">
               ABOUT
             </a>
-            <a href="/services" className="hover:text-purple-700 transition-colors duration-200">
-              SERVICES
-            </a>
-            <a href="/portfolio" className="hover:text-purple-700 transition-colors duration-200">
-              PORTFOLIO
-            </a>
-            <a href="/contact" className="hover:text-purple-700 transition-colors duration-200">
+            <a href="#contact" className="hover:text-purple-700 transition-colors duration-200">
               CONTACT
             </a>
           </div>
+
+          {/* Hamburger Menu Button (Mobile) */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="md:hidden text-gray-800 focus:outline-none hover:text-pink-600 transition"
+          >
+            {menuOpen ? (
+              // ❌ Close Icon
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              // ☰ Hamburger Icon
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
         </div>
+
+        {/* Mobile Dropdown Menu */}
+        <AnimatePresence>
+          {menuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.3 }}
+              className="md:hidden flex flex-col items-center space-y-4 py-6 bg-white/90 backdrop-blur-md shadow-inner"
+            >
+              <a href="#home" onClick={() => setMenuOpen(false)} className="font-semibold text-gray-700 hover:text-purple-700 transition">
+                HOME
+              </a>
+              <a href="#about" onClick={() => setMenuOpen(false)} className="font-semibold text-gray-700 hover:text-purple-700 transition">
+                ABOUT
+              </a>
+              <a href="#contact" onClick={() => setMenuOpen(false)} className="font-semibold text-gray-700 hover:text-purple-700 transition">
+                CONTACT
+              </a>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
 
       {/* 💎 HERO SECTION */}
@@ -161,6 +199,86 @@ export default function Home() {
           </motion.section>
         )}
       </AnimatePresence>
+
+      {/* 🌙 CONTACT / FOOTER SECTION */}
+      <motion.footer
+        id="contact"
+        className="relative z-10 w-full bg-gradient-to-b from-[#1a1b1e] to-[#2a2b2e] text-gray-300 px-8 py-20"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+      >
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+          {/* 🧠 About / Branding */}
+          <div>
+            <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-2">
+              CODECRAFTERS
+            </h2>
+            <p className="text-sm text-gray-400">
+              Turning ideas into digital experiences — from Bongao to the world.
+              <br />
+              Crafting apps, games, and brands with creativity and heart.
+            </p>
+            <p className="text-xs text-gray-500 mt-6">
+              © {new Date().getFullYear()} CODECRAFTERS. All rights reserved.
+            </p>
+          </div>
+
+          {/* ⚡ Quick Links */}
+          <div>
+            <h3 className="text-lg font-semibold text-white mb-3">Quick Links</h3>
+            <ul className="space-y-2 text-sm">
+              <li><a href="#home" className="hover:text-pink-400 transition">Home</a></li>
+              <li><a href="#about" className="hover:text-pink-400 transition">About</a></li>
+              <li><a href="#team" className="hover:text-pink-400 transition">Team</a></li>
+              <li><a href="#contact" className="hover:text-pink-400 transition">Contact</a></li>
+            </ul>
+          </div>
+
+          {/* 📍 Contact Info */}
+          <div>
+            <h3 className="text-lg font-semibold text-white mb-3">Contact Info</h3>
+            <ul className="space-y-3 text-sm">
+              <li className="flex items-start gap-3">
+                <span className="text-pink-400 text-lg">📍</span>
+                <div>
+                  <p className="text-gray-300">Bongao, Tawi-Tawi, Philippines</p>
+                  <p className="text-gray-500 text-xs">Available for remote work</p>
+                </div>
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="text-pink-400 text-lg">✉️</span>
+                <a href="mailto:codecraftersbongao@gmail.com" className="hover:text-pink-400 transition">
+                  codecraftersbongao@gmail.com
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="text-pink-400 text-lg">📞</span>
+                <a href="tel:09272315866" className="hover:text-pink-400 transition">
+                  0927 231 5866 - 0956 158 2791
+                </a>
+              </li>
+              <li className="flex items-center gap-3">
+                <span className="text-pink-400 text-lg">⏰</span>
+                <p>Mon–Fri: 9AM–6PM (PHT)</p>
+              </li>
+            </ul>
+
+            {/* 🗺️ Map */}
+            <div className="mt-6 rounded-lg overflow-hidden shadow-md">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15947.896084685215!2d119.76702422997134!3d5.030689375398804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32413af0b1bdbb27%3A0x9c8b5df0d7f87e0c!2sBongao%2C%20Tawi-Tawi!5e0!3m2!1sen!2sph!4v1700280000000!5m2!1sen!2sph"
+                width="100%"
+                height="180"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </motion.footer>
     </main>
   );
 }
