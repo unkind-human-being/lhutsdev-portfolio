@@ -41,6 +41,9 @@ export default function Home() {
             <a href="#about" className="hover:text-purple-700 transition-colors duration-200">
               ABOUT
             </a>
+            <a href="/services" className="hover:text-purple-700 transition-colors duration-200">
+              SERVICES
+            </a>
             <a href="#contact" className="hover:text-purple-700 transition-colors duration-200">
               CONTACT
             </a>
@@ -75,13 +78,32 @@ export default function Home() {
               transition={{ duration: 0.3 }}
               className="md:hidden flex flex-col items-center space-y-4 py-6 bg-white/90 backdrop-blur-md shadow-inner"
             >
-              <a href="#home" onClick={() => setMenuOpen(false)} className="font-semibold text-gray-700 hover:text-purple-700 transition">
+              <a
+                href="#home"
+                onClick={() => setMenuOpen(false)}
+                className="font-semibold text-gray-700 hover:text-purple-700 transition"
+              >
                 HOME
               </a>
-              <a href="#about" onClick={() => setMenuOpen(false)} className="font-semibold text-gray-700 hover:text-purple-700 transition">
+              <a
+                href="#about"
+                onClick={() => setMenuOpen(false)}
+                className="font-semibold text-gray-700 hover:text-purple-700 transition"
+              >
                 ABOUT
               </a>
-              <a href="#contact" onClick={() => setMenuOpen(false)} className="font-semibold text-gray-700 hover:text-purple-700 transition">
+              <a
+                href="/services"
+                onClick={() => setMenuOpen(false)}
+                className="font-semibold text-gray-700 hover:text-purple-700 transition"
+              >
+                SERVICES
+              </a>
+              <a
+                href="#contact"
+                onClick={() => setMenuOpen(false)}
+                className="font-semibold text-gray-700 hover:text-purple-700 transition"
+              >
                 CONTACT
               </a>
             </motion.div>
@@ -140,14 +162,18 @@ export default function Home() {
 
         <p className="max-w-3xl text-lg sm:text-xl text-gray-800 leading-relaxed z-10">
           We’re <span className="font-semibold text-purple-700">CODECRAFTERS</span> — a small but mighty creative studio based in{" "}
-          <span className="font-semibold text-pink-600">Bongao, Tawi-Tawi</span>, built by a group of skilled makers who love turning ideas into real, working digital experiences. <br /> <br />
+          <span className="font-semibold text-pink-600">Bongao, Tawi-Tawi</span>, built by a group of skilled makers who love turning ideas into
+          real, working digital experiences. <br /> <br />
           From{" "}
           <span className="font-semibold text-purple-600">mobile apps, websites, and desktop software</span>{" "}
           to{" "}
-          <span className="font-semibold text-rose-500">graphic design and social media content</span>, we help local businesses and creators show up online in a way that feels true to who they are. <br /> <br />
+          <span className="font-semibold text-rose-500">graphic design and social media content</span>, we help local businesses and creators show
+          up online in a way that feels true to who they are. <br /> <br />
           Our team blends <span className="font-semibold text-yellow-500">code</span>,{" "}
           <span className="font-semibold text-cyan-500">design</span>, and{" "}
-          <span className="font-semibold text-pink-500">storytelling</span> to build solutions that are easy to use, beautiful to look at, and ready to grow with your brand. Whether you’re just starting or leveling up, we craft every project with care, creativity, and heart. <br /> <br />
+          <span className="font-semibold text-pink-500">storytelling</span> to build solutions that are easy to use, beautiful to look at, and
+          ready to grow with your brand. Whether you’re just starting or leveling up, we craft every project with care, creativity, and heart.{" "}
+          <br /> <br />
           <span className="italic text-gray-700">Let’s build something awesome together — for Bongao and beyond.</span>
         </p>
 
@@ -231,6 +257,7 @@ export default function Home() {
             <ul className="space-y-2 text-sm">
               <li><a href="#home" className="hover:text-pink-400 transition">Home</a></li>
               <li><a href="#about" className="hover:text-pink-400 transition">About</a></li>
+              <li><a href="/services" className="hover:text-pink-400 transition">Services</a></li>
               <li><a href="#team" className="hover:text-pink-400 transition">Team</a></li>
               <li><a href="#contact" className="hover:text-pink-400 transition">Contact</a></li>
             </ul>
