@@ -12,7 +12,7 @@ export default function Home() {
     { name: "Lhuts", role: "CEO / Founder", image: "/team/Lhuts.png" },
     { name: "Jerik", role: "Product Lead / Product Manager", image: "/team/Jerik.jpg" },
     { name: "Dhan", role: "CTO / Tech Lead", image: "/team/Dhan.jpg" },
-    { name: "Nadz", role: "Marketing & Growth Lead", image: "/team/Nadz.jpg" },
+    { name: "Nadz", role: "Marketing & Growth Lead", image: "/team/Nadz.png" },
     { name: "Dyzon", role: "Sales & Customer Success", image: "/team/Dyzon.jpg" },
     { name: "Nedz", role: "Operations & Finance Lead", image: "/team/Nedz.jpg" },
   ];
