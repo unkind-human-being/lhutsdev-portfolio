@@ -41,9 +41,8 @@ export default function Home() {
             <a href="#about" className="hover:text-purple-700 transition-colors duration-200">
               ABOUT
             </a>
-            <a href="/services" className="hover:text-purple-700 transition-colors duration-200">
-              SERVICES
-            </a>
+            <a href="/services#portfolio" onClick={() => setMenuOpen(false)}>PORTFOLIO</a>
+            <a href="/services#services" onClick={() => setMenuOpen(false)}>SERVICES</a>
             <a href="#contact" className="hover:text-purple-700 transition-colors duration-200">
               CONTACT
             </a>
@@ -92,13 +91,9 @@ export default function Home() {
               >
                 ABOUT
               </a>
-              <a
-                href="/services"
-                onClick={() => setMenuOpen(false)}
-                className="font-semibold text-gray-700 hover:text-purple-700 transition"
-              >
-                SERVICES
-              </a>
+              <a href="/#portfolio" onClick={() => setMenuOpen(false)} className="font-semibold text-gray-700 hover:text-purple-700">PORTFOLIO</a>
+              <a href="/services#portfolio" onClick={() => setMenuOpen(false)}>PORTFOLIO</a>
+              <a href="/services#services" onClick={() => setMenuOpen(false)}>SERVICES</a>
               <a
                 href="#contact"
                 onClick={() => setMenuOpen(false)}
