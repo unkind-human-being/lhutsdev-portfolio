@@ -91,7 +91,6 @@ export default function Home() {
               >
                 ABOUT
               </a>
-              <a href="/#portfolio" onClick={() => setMenuOpen(false)} className="font-semibold text-gray-700 hover:text-purple-700">PORTFOLIO</a>
               <a href="/services#portfolio" onClick={() => setMenuOpen(false)}>PORTFOLIO</a>
               <a href="/services#services" onClick={() => setMenuOpen(false)}>SERVICES</a>
               <a
