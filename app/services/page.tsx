@@ -141,7 +141,10 @@ export default function ServicesPage() {
         )}
 
         {selectedMobileCat === "ecommerce" && (
+          <>
           <img src="/portfolio/Picart.png" className="w-48 rounded-lg shadow-lg" />
+          <img src="/portfolio/Alhadyz.jpg" className="w-48 rounded-lg shadow-lg" />
+          </>
         )}
       </div>
     </div>
