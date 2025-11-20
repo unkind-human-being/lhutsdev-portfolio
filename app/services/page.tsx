@@ -34,7 +34,7 @@ export default function ServicesPage() {
           <div className="hidden md:flex space-x-8 text-sm font-semibold text-gray-700">
             <a href="/" className="hover:text-purple-700 transition">HOME</a>
             <a href="/#about" className="hover:text-purple-700 transition">ABOUT</a>
-            <a href="/services#portfolio">PORTFOLIO</a>
+            <a href="/services#portfolio"className="hover:text-purple-700 transition">PORTFOLIO</a>
             <a href="/services#services" className="hover:text-purple-700 transition">SERVICES</a>
 
             <a href="/#contact" className="hover:text-purple-700 transition">CONTACT</a>
@@ -68,8 +68,8 @@ export default function ServicesPage() {
             >
               <a href="/" onClick={() => setMenuOpen(false)} className="font-semibold text-gray-700 hover:text-purple-700">HOME</a>
               <a href="/#about" onClick={() => setMenuOpen(false)} className="font-semibold text-gray-700 hover:text-purple-700">ABOUT</a>
-              <a href="/services#portfolio" onClick={() => setMenuOpen(false)}>PORTFOLIO</a>
-              <a href="/services#services" onClick={() => setMenuOpen(false)}>SERVICES</a>
+              <a href="/services#portfolio" onClick={() => setMenuOpen(false)}className="font-semibold text-gray-700 hover:text-purple-700 transition">PORTFOLIO</a>
+              <a href="/services#services" onClick={() => setMenuOpen(false)}className="font-semibold text-gray-700 hover:text-purple-700 transition">SERVICES</a>
               <a href="/#contact" onClick={() => setMenuOpen(false)} className="font-semibold text-gray-700 hover:text-purple-700">CONTACT</a>
             </motion.div>
           )}
